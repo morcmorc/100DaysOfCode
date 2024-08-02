@@ -48,7 +48,11 @@ match player:
     case "Scissors":
         player = 2
     case _:
-        player = int(player)
+        try:
+            player = int(player)
+        except:
+            print("Not an allowed answer!")
+            exit()
 
 
 #print player as asci
