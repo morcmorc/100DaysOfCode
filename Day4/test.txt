@@ -1,0 +1,6 @@
+github 
+git add .
+git commit -m "Beschreibung"
+git push origin main
+git pull origin main
+
