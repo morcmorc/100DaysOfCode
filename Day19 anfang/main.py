@@ -7,3 +7,4 @@
 # 19.08 kb
 # 20.08 i cant
 # 21.08 valo
+# 22.08 immer noch pause :$
