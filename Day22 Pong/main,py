@@ -1,0 +1,43 @@
+from turtle import Screen
+from paddle import Paddle
+from ball import Ball
+from scoreboard import Scoreboard
+import time
+
+screen = Screen()
+screen.setup(width=800, height=600)
+screen.bgcolor("black")
+screen.title("Pong Game")
+screen.tracer(0)
+
+game_is_on = True
+
+p1 = Paddle(player="left")
+p2 = Paddle(player="right")
+ball = Ball()
+scoreboard = Scoreboard()
+
+screen.listen()
+#p1 steuerung
+screen.onkeypress(p1.up, "w")
+screen.onkeypress(p1.down, "s")
+#p2 steuerung
+screen.onkeypress(p2.up, "Up")
+screen.onkeypress(p2.down, "Down")
+
+while game_is_on:
+    time.sleep(0.01)
+    screen.update()
+    ball.move()
+    ball.paddlebounce(p1, p2)
+    print(ball.x_speed)
+    if ball.get_scored() == 1:
+        ball.reset_scored()
+        scoreboard.add_point_left()
+    elif ball.get_scored() == 2:
+        ball.reset_scored()
+        scoreboard.add_point_right()
+
+
+
+screen.exitonclick()
