@@ -11,7 +11,7 @@
 #     contents = file.write("New Text.\n")
 #     print(contents)
 
-# with open ("C:\\Users\\marcs\\Desktop\\tes.txt") as file:
-with open (r"C:\Users\marcs\Desktop\tes.txt") as file: # raw sting
+with open ("C:\\Users\\marcs\\Desktop\\tes.txt") as file:
+# with open (r"C:\Users\marcs\Desktop\tes.txt") as file: # raw sting
     contents = file.read()
     print(contents)
