@@ -56,10 +56,11 @@ while game_is_on:
 
 print("exited")
 
-missing_states = []
-for state in state_names:
-    if state not in right:
-        missing_states.append(state)
+missing_states = [state for state in state_names if state not in right]
+# for state in state_names:
+#     if state not in right:
+#         missing_states.append(state)
+
 print(len(missing_states))
 
 new_data = pandas.DataFrame(missing_states)
